@@ -2,16 +2,16 @@ use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize)]
 pub struct FeedItem {
-    timeofday: String,
-    feed_time_s: f32,
+    pub timeofday: String,
+    pub feed_time_s: f32,
 }
 
-#[derive(Serialize, Deserealize)]
-pub struct FeederModel {
-    backward_time_s: f32,
-    pause_time_s: f32,
-    feed_times: Vec<FeedItem>,
-    gpiochip_name: String,
-    forward_line: i32,
-    backward_line: i32,
+#[derive(Serialize, Deserialize)]
+pub struct FeederConfig {
+    pub backward_time_s: f32,
+    pub pause_time_s: f32,
+    pub feed_times: Vec<FeedItem>,
+    pub gpiochip_name: String,
+    pub forward_line: i32,
+    pub backward_line: i32,
 }
